@@ -30,7 +30,7 @@ if (
     throw new apiError(400, "All fields are required")
 }
 
- const existedUser = User.find({
+ const existedUser = await User.find({
     $or: [{ username }, { email }]
 })
 
